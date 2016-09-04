@@ -18,10 +18,11 @@ ACLOCAL_AMFLAGS = -I build ${ACLOCAL_FLAGS}
 
 DIST_SUBDIRS = src doc util boilerplate test perf
 SUBDIRS = src doc util
+# Cross compiling tests for PS3 fails, so don't do it.
 # libpng is required for our test programs
-if CAIRO_HAS_PNG_FUNCTIONS
-SUBDIRS += boilerplate test perf
-endif
+#if CAIRO_HAS_PNG_FUNCTIONS
+#SUBDIRS += boilerplate test perf
+#endif
 
 configure: cairo-version.h
 
